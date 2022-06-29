@@ -30,6 +30,7 @@ namespace Kolokwium_2.Services
                          {
                              MemberName = x.Member.MemberName,
                              MemberNickName = x.Member.MemberNickName,
+                             MemberSurname = x.Member.MemberSurname
 
                          }).ToList()
                      },
