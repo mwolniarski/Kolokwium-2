@@ -12,14 +12,16 @@ namespace Kolokwium_2.Controllers
 
         public TeamController(IDbService dbService)
         {
-            this._dbService = dbService;
+            _dbService = dbService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetTeams()
         {
             var result = await _dbService.GetTeams();
-            return Ok(result);
+            if(result == null)
+                return NotFound();
+            else return Ok(result);
         }
 
         [HttpGet]
